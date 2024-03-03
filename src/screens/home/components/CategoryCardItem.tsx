@@ -1,7 +1,8 @@
 import RNBounceable from "@freakycoder/react-native-bounceable";
 import ICategoryCardItem from "@screens/home/components/types/ICategoryCardItem";
 import React, { useMemo } from "react";
-import { Text, View, ViewStyle } from "react-native";
+import { View, ViewStyle } from "react-native";
+import { Text } from "@shared-components";
 import createStyles from "./CategoryCardItem.style";
 import { useTheme } from "@react-navigation/native";
 import Icon, { IconType } from "react-native-dynamic-vector-icons";
@@ -24,11 +25,17 @@ const CategoryCardItem = ({ onPress, data, style }: Props) => {
           size={34}
           style={styles.icon}
         />
-        <Text style={styles.title}>{data.title}</Text>
+        <Text h1 style={styles.title}>
+          {data.title}
+        </Text>
       </View>
       <View style={styles.bottomContainer}>
-        <Text style={styles.wordsCount}>{data.wordsCount}</Text>
-        <Text style={styles.bottomDescriptionText}>Words</Text>
+        <Text h1 style={styles.wordsCount}>
+          {data.wordsCount}
+        </Text>
+        <Text h1 style={styles.bottomDescriptionText}>
+          Words
+        </Text>
       </View>
     </RNBounceable>
   );

@@ -10,7 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "@screens/home/HomeScreen";
 import ProfileScreen from "@screens/profile/ProfileScreen";
 import LevelDetailScreen from "@screens/levelDetail/LevelDetailScreen";
-import Header from "@shared-components/header/Header";
+import { BasicHeader } from "@shared-components";
 /**
  * ? Local & Shared Imports
  */
@@ -33,7 +33,7 @@ const Navigation = () => {
     route: any,
     focused: boolean,
     color: string,
-    size: number
+    size: number,
   ) => {
     let iconName = "home";
     switch (route.name) {
@@ -108,7 +108,7 @@ const Navigation = () => {
           component={(props: any) => <LevelDetailScreen {...props} />}
           options={{
             headerShown: true,
-            header: () => <Header />,
+            header: () => <BasicHeader />,
           }}
         />
       </Stack.Navigator>

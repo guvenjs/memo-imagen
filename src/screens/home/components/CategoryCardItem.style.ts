@@ -23,7 +23,6 @@ export default (theme: ExtendedTheme) => {
       marginBottom: 10,
     },
     title: {
-      fontSize: 34,
       lineHeight: 42,
       fontWeight: "700",
       color: colors.primary,
@@ -35,15 +34,13 @@ export default (theme: ExtendedTheme) => {
       alignItems: "center",
     },
     wordsCount: {
-      fontSize: 30,
       color: colors.primaryLight,
       fontWeight: "900",
     },
     bottomDescriptionText: {
       color: colors.primaryLight,
-      fontSize: 30,
       fontWeight: "700",
-      marginLeft: 5,
+      paddingLeft: 5,
     },
   });
 };

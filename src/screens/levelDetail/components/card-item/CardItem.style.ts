@@ -29,17 +29,14 @@ export default (theme: ExtendedTheme) => {
     },
     word: {
       color: "#cd1332",
-      fontSize: 50,
       lineHeight: 58,
       fontWeight: "700",
     },
     sentence: {
       marginVertical: 5,
-      fontSize: 16,
       color: colors.calpyse,
     },
     paragraph: {
-      fontSize: 16,
       letterSpacing: 0.5,
       color: colors.text,
     },

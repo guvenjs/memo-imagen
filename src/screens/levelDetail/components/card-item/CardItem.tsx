@@ -5,7 +5,7 @@ import Icon, { IconType } from "react-native-dynamic-vector-icons";
 import createStyles from "./CardItem.style";
 import RNBounceable from "@freakycoder/react-native-bounceable";
 import { useTheme } from "@react-navigation/native";
-import Text from "@shared-components/text-wrapper/TextWrapper";
+import { Text } from "@shared-components";
 import { Word } from "@services/models/words/Word";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;

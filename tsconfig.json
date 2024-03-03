@@ -28,8 +28,11 @@
     // ? Babel Plugin Module Resolver
     "baseUrl": "./src",
     "paths": {
+      "@shared/*": ["./shared/*"],
       "@shared-components/*": ["./shared/components/*"],
       "@shared-constants": ["./shared/constants"],
+      "@shared-components": ["./shared/components"],
+      "@shared-styles": ["./shared/styles"],
       "@font-size": ["./shared/theme/font-size"],
       "@api": ["./services/api/index"],
       "@fonts": ["./shared/theme/fonts"],

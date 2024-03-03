@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import {
   useNavigation,
   useTheme,
@@ -8,11 +8,11 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon, { IconType } from "react-native-dynamic-vector-icons";
 
-interface Props {
-  title?: string;
-}
+// interface Props {
+//   title?: string;
+// }
 
-const Header = () => {
+const BasicHeader = () => {
   const theme = useTheme();
   const styles = useMemo(() => createStyles(theme), [theme]);
 
@@ -32,7 +32,6 @@ const Header = () => {
           style={styles.icon}
         />
       </TouchableOpacity>
-      {/* <Text style={styles.title}>Header</Text> */}
     </SafeAreaView>
   );
 };
@@ -50,10 +49,7 @@ const createStyles = (theme: ExtendedTheme) => {
     icon: {
       color: colors.primary,
     },
-    // title: {
-    //   fontSize: 24,
-    // },
   });
 };
 
-export default Header;
+export default BasicHeader;

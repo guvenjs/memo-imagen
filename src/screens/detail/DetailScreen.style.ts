@@ -16,9 +16,7 @@ export default (theme: ExtendedTheme) => {
       alignItems: "center",
       justifyContent: "center",
     },
-    titleTextStyle: {
-      fontSize: 32,
-    },
+    titleTextStyle: {},
     buttonStyle: {
       height: 45,
       width: "90%",
