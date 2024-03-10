@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "480281802573",
+    "firebase_url": "https://memo-imagen-default-rtdb.firebaseio.com",
+    "project_id": "memo-imagen",
+    "storage_bucket": "memo-imagen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480281802573:android:df43e87a9b945a6197e904",
+        "android_client_info": {
+          "package_name": "com.memo.imagen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSAq52o702v1v23IWhgoVAQ4DF241Nunc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

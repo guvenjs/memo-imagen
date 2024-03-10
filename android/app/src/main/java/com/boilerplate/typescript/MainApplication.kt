@@ -1,4 +1,4 @@
-package com.boilerplate.typescript
+package com.memo.imagen
 
 import android.app.Application
 import com.facebook.react.PackageList
