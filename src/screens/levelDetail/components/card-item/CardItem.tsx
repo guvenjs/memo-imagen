@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import type { StyleProp, ViewStyle } from "react-native";
 import { Image, View } from "react-native";
 import Icon, { IconType } from "react-native-dynamic-vector-icons";
@@ -7,6 +7,7 @@ import RNBounceable from "@freakycoder/react-native-bounceable";
 import { useTheme } from "@react-navigation/native";
 import { Text } from "@shared-components";
 import { Word } from "@services/models/words/Word";
+import storage from "@react-native-firebase/storage";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 
@@ -20,7 +21,19 @@ const CardItem: React.FC<Props> = ({ style, data }) => {
   const { colors } = theme;
   const styles = useMemo(() => createStyles(theme), [theme]);
 
+  const [imageUrl, setImageUrl] = React.useState<string | null>(null);
+
   const { word, examples, image_path } = data;
+
+  useEffect(() => {
+    if (!image_path) return;
+    const getImageUrl = async () => {
+      const url = await storage().ref(image_path).getDownloadURL();
+      setImageUrl(url);
+    };
+
+    getImageUrl();
+  }, [image_path]);
 
   return (
     <RNBounceable style={[styles.container, style]}>
@@ -44,7 +57,7 @@ const CardItem: React.FC<Props> = ({ style, data }) => {
       </View>
 
       <View style={styles.imageContainer}>
-        {/* <Image style={styles.image} source={image_path} /> */}
+        {imageUrl && <Image style={styles.image} source={{ uri: imageUrl }} />}
       </View>
 
       <View style={styles.bottomContainer}>
