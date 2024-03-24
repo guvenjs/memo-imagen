@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import {
   useNavigation,
   useTheme,
@@ -24,8 +24,8 @@ const BasicHeader = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={handleGoBack}>
+    <SafeAreaView edges={["top", "right", "left"]} style={styles.safeArea}>
+      <TouchableOpacity onPress={handleGoBack} style={styles.button}>
         <Icon
           type={IconType.Feather}
           name="chevron-left"
@@ -40,12 +40,15 @@ const BasicHeader = () => {
 const createStyles = (theme: ExtendedTheme) => {
   const { colors } = theme;
   return StyleSheet.create({
-    container: {
+    safeArea: {
+      backgroundColor: colors.secondaryDark,
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
       paddingHorizontal: 15,
-      backgroundColor: colors.secondary,
+    },
+    button: {
+      paddingBottom: 15,
     },
     icon: {
       color: colors.primary,
