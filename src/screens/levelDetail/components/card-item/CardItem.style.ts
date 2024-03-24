@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import type { ExtendedTheme } from "@react-navigation/native";
 import fonts, { fontSize, lineHeight } from "@shared/theme/fonts";
+import { ScreenHeight } from "@freakycoder/react-native-helpers";
 
 export default (theme: ExtendedTheme) => {
   const { colors } = theme;
@@ -13,22 +14,23 @@ export default (theme: ExtendedTheme) => {
     },
     imageContainer: {},
     image: {
-      height: 218,
-      borderRadius: 24,
+      backgroundColor: colors.primary,
+      height: ScreenHeight * 0.4,
+      borderRadius: 16,
       resizeMode: "cover",
     },
     contentContainer: {
-      marginVertical: 16,
+      marginVertical: 24,
     },
     word: {
       fontFamily: fonts.montserrat.bold,
-      fontSize: fontSize.xxl,
-      lineHeight: lineHeight.xxl,
+      fontSize: fontSize.xxxl,
+      lineHeight: lineHeight.xxxl,
       fontWeight: "600",
     },
     sentence: {
-      fontSize: fontSize.m,
-      lineHeight: lineHeight.m,
+      fontSize: fontSize.l,
+      lineHeight: lineHeight.l,
       color: colors.text,
       marginTop: 12,
     },

@@ -8,7 +8,11 @@ import type { ExtendedTheme } from "@react-navigation/native";
 import TextWrapper from "../text-wrapper/TextWrapper";
 import { useTheme } from "@react-navigation/native";
 
-const PronouncationButton = () => {
+interface Props {
+  word: string;
+}
+
+const PronouncationButton = ({ word }: Props) => {
   const theme = useTheme();
 
   const styles = useMemo(() => createStyles(theme), [theme]);
@@ -19,18 +23,14 @@ const PronouncationButton = () => {
     <RNBounceable
       style={styles.wrapper}
       onPress={() => {
-        // Tts.speak("Hello, world!", {
-        //   iosVoiceId: "com.apple.ttsbundle.Moira-compact",
-        //   rate: 0.5,
-        //   androidParams: {
-        //     KEY_PARAM_PAN: -1,
-        //     KEY_PARAM_VOLUME: 0.5,
-        //     KEY_PARAM_STREAM: "STREAM_MUSIC",
-        //   },
-        // });
-        Tts.setDefaultVoice("com.apple.ttsbundle.Moira-compact");
-        Tts.getInitStatus().then(() => {
-          Tts.speak("Hello, world!");
+        Tts.speak(word, {
+          iosVoiceId: "com.apple.ttsbundle.Moira-compact",
+          rate: 0.5,
+          androidParams: {
+            KEY_PARAM_PAN: -1,
+            KEY_PARAM_VOLUME: 0.5,
+            KEY_PARAM_STREAM: "STREAM_MUSIC",
+          },
         });
       }}
     >
@@ -52,7 +52,7 @@ const createStyles = (theme: ExtendedTheme) => {
     wrapper: {
       flexDirection: "row",
       alignItems: "center",
-      paddingVertical: 15,
+      paddingVertical: 12,
     },
     icon: {
       marginRight: 3,

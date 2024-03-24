@@ -217,7 +217,7 @@ export default {
             "The word 'carrot' can be remembered by picturing a rabbit eating a crunchy orange carrot, often associated with healthy eating and vision.",
           visual_image_description:
             "Envision a fresh bunch of carrots with vibrant orange roots and green tops, lying on a kitchen counter, ready to be used in a delicious meal.",
-          image_path: "images/vegetables/carrot.webp",
+          image_path: "images/vegetables/carrots.webp",
           id: "368eab2d-596c-4105-8e73-55ade8d0613c",
         },
         {
@@ -448,7 +448,7 @@ export default {
             "The word 'knife' can be remembered by visualizing a chef skillfully using a knife to prepare a meal, emphasizing its importance in culinary arts.",
           visual_image_description:
             "Picture a chef's knife, gleaming with a sharp edge, on a wooden cutting board surrounded by fresh ingredients, ready for meal preparation.",
-          image_path: "images/kitchen_equipment/knife.webp",
+          image_path: "images/kitchen_equipments/knife.webp",
           id: "764920d2-daf0-434f-9a76-ed4f1237256d",
         },
         {
@@ -467,7 +467,7 @@ export default {
             "The word 'oven' can be remembered by picturing a family gathering around to take out a freshly baked pie, associating it with warmth and home cooking.",
           visual_image_description:
             "Imagine an oven with its door open, revealing a delicious, golden-brown pie, filling the kitchen with a delightful aroma.",
-          image_path: "images/kitchen_equipment/oven.webp",
+          image_path: "images/kitchen_equipments/oven.webp",
           id: "ce0bc781-a104-4560-ad0c-18b9af4d55d7",
         },
         {
@@ -486,7 +486,7 @@ export default {
             "Remember 'spoon' by associating it with daily routines like stirring a cup of tea or enjoying a bowl of soup.",
           visual_image_description:
             "Picture a set of shiny metal spoons of different sizes neatly arranged in a kitchen drawer.",
-          image_path: "images/kitchen_equipment/spoon.webp",
+          image_path: "images/kitchen_equipments/spoon.webp",
           id: "8c52cab2-e10f-45ca-b14c-795d4cf44d4d",
         },
         {
@@ -505,7 +505,7 @@ export default {
             "Remember 'fork' by visualizing it as a key tool for elegantly eating meals, from salads to pastas.",
           visual_image_description:
             "Imagine a dinner table set with polished forks next to each plate, ready for a meal.",
-          image_path: "images/kitchen_equipment/fork.webp",
+          image_path: "images/kitchen_equipments/fork.webp",
           id: "5845ff08-b2d1-4484-9a09-efa41b5a218d",
         },
         {
@@ -524,7 +524,7 @@ export default {
             "Remember 'blender' by associating it with the preparation of quick, healthy drinks or meals.",
           visual_image_description:
             "Visualize a modern kitchen blender filled with colorful fruits, ready to make a nutritious smoothie.",
-          image_path: "images/kitchen_equipment/blender.webp",
+          image_path: "images/kitchen_equipments/blender.webp",
           id: "23719de5-d55d-4f0b-a688-925a5888dd82",
         },
         {
@@ -543,7 +543,7 @@ export default {
             "Remember 'mixer' by picturing it as an essential tool for any baking project, simplifying and enhancing the process.",
           visual_image_description:
             "Imagine a stand mixer on a kitchen counter, with a bowl full of cake batter, ready for baking.",
-          image_path: "images/kitchen_equipment/mixer.webp",
+          image_path: "images/kitchen_equipments/mixer.webp",
           id: "56e4bdc3-7d77-47c2-9e70-1831a507dd84",
         },
         {
@@ -562,7 +562,7 @@ export default {
             "Remember 'toaster' by its daily use for preparing warm, crispy bread in the mornings.",
           visual_image_description:
             "Envision a sleek toaster with slices of bread, the warm aroma of toast filling the kitchen.",
-          image_path: "images/kitchen_equipment/toaster.webp",
+          image_path: "images/kitchen_equipments/toaster.webp",
           id: "e97cce2b-4db5-43b9-8845-f6842dd5a45d",
         },
         {
@@ -581,7 +581,7 @@ export default {
             "Remember 'grater' by associating it with the finishing touch it gives to dishes like pasta and salads.",
           visual_image_description:
             "Picture a metal grater with shreds of cheese, enhancing the flavor of a dish.",
-          image_path: "images/kitchen_equipment/grater.webp",
+          image_path: "images/kitchen_equipments/grater.webp",
           id: "f52853ae-50b6-4202-9e2a-299a9baf8da9",
         },
         {
@@ -600,7 +600,7 @@ export default {
             "Remember 'rolling pin' by picturing it as a key tool in transforming dough into delicious baked goods.",
           visual_image_description:
             "Imagine a wooden rolling pin flattening a piece of dough on a floured surface, ready for baking.",
-          image_path: "images/kitchen_equipment/rolling pin.webp",
+          image_path: "images/kitchen_equipments/rolling_pin.webp",
           id: "0ebac7ee-4b4b-4108-8406-5bfbee4539b7",
         },
         {
@@ -618,7 +618,7 @@ export default {
             "Remember 'chopping board' by its role as a kitchen cornerstone, where all meal preparations begin.",
           visual_image_description:
             "Visualize a wooden chopping board on a kitchen counter, with an array of fresh vegetables ready to be cut.",
-          image_path: "images/kitchen_equipment/chopping board.webp",
+          image_path: "images/kitchen_equipments/chopping_board.webp",
           id: "6e6e3b07-8ae5-45c3-9337-8e5a33ac56a0",
         },
       ],

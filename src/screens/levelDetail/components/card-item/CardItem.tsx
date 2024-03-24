@@ -54,7 +54,7 @@ const CardItem: React.FC<Props> = ({ data }) => {
     <RNBounceable style={styles.container}>
       {renderImage()}
       {renderContent()}
-      <PronouncationButton />
+      <PronouncationButton word={word} />
       <FavoriteButton />
     </RNBounceable>
   );

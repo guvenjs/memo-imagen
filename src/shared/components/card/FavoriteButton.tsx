@@ -34,7 +34,7 @@ const createStyles = (theme: ExtendedTheme) => {
     wrapper: {
       flexDirection: "row",
       alignItems: "center",
-      paddingVertical: 15,
+      paddingVertical: 12,
     },
     icon: {
       marginRight: 3,
