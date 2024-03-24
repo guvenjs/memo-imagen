@@ -1,7 +1,8 @@
 import React, { useMemo } from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import createStyles from "./LevelDetailScreen.style";
+import createSharedStyles from "shared/styles";
 import CardItem from "./components/card-item/CardItem";
 import { useTheme } from "@react-navigation/native";
 import Carousel from "react-native-snap-carousel";
@@ -21,11 +22,14 @@ const LevelDetailScreen = ({ route }: Props) => {
 
   const theme = useTheme();
   const styles = useMemo(() => createStyles(theme), [theme]);
+  const sharedStyles = useMemo(() => createSharedStyles(theme), [theme]);
 
   const renderList = () => (
     <Carousel
       data={words}
       itemWidth={ScreenWidth}
+      layout={"stack"}
+      layoutCardOffset={18}
       sliderWidth={ScreenWidth}
       renderItem={({ item }) => <CardItem data={item} />}
     />
@@ -33,11 +37,7 @@ const LevelDetailScreen = ({ route }: Props) => {
 
   const renderContent = () => <View>{renderList()}</View>;
 
-  return (
-    <SafeAreaView edges={["top", "left", "right"]} style={styles.container}>
-      {renderContent()}
-    </SafeAreaView>
-  );
+  return <View style={styles.container}>{renderContent()}</View>;
 };
 
 export default LevelDetailScreen;

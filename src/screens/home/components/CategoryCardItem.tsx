@@ -6,6 +6,7 @@ import { Text } from "@shared-components";
 import createStyles from "./CategoryCardItem.style";
 import { useTheme } from "@react-navigation/native";
 import Icon, { IconType } from "react-native-dynamic-vector-icons";
+import { fontSize } from "@shared/theme/fonts";
 
 interface Props {
   onPress: () => void;
@@ -22,7 +23,7 @@ const CategoryCardItem = ({ onPress, data, style }: Props) => {
         <Icon
           name={data.icon}
           type={IconType.MaterialCommunityIcons}
-          size={34}
+          size={fontSize.xxxl}
           style={styles.icon}
         />
         <Text h1 style={styles.title}>

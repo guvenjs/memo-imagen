@@ -7,6 +7,7 @@ import {
 } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon, { IconType } from "react-native-dynamic-vector-icons";
+import { fontSize } from "@shared/theme/fonts";
 
 // interface Props {
 //   title?: string;
@@ -26,9 +27,9 @@ const BasicHeader = () => {
     <SafeAreaView style={styles.container}>
       <TouchableOpacity onPress={handleGoBack}>
         <Icon
-          type={IconType.MaterialCommunityIcons}
+          type={IconType.Feather}
           name="chevron-left"
-          size={34}
+          size={fontSize.xxxl}
           style={styles.icon}
         />
       </TouchableOpacity>

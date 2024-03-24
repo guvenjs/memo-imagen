@@ -1,24 +1,22 @@
 import React, { useEffect, useMemo } from "react";
-import type { StyleProp, ViewStyle } from "react-native";
 import { Image, View } from "react-native";
-import Icon, { IconType } from "react-native-dynamic-vector-icons";
 import createStyles from "./CardItem.style";
 import RNBounceable from "@freakycoder/react-native-bounceable";
 import { useTheme } from "@react-navigation/native";
 import { Text } from "@shared-components";
 import { Word } from "@services/models/words/Word";
 import storage from "@react-native-firebase/storage";
-
-type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+import FavoriteButton from "@shared/components/card/FavoriteButton";
+import PronouncationButton from "@shared/components/card/PronouncationButton";
 
 interface Props {
-  style?: CustomStyleProp;
   data: Word;
 }
 
-const CardItem: React.FC<Props> = ({ style, data }) => {
+const CardItem: React.FC<Props> = ({ data }) => {
   const theme = useTheme();
   const { colors } = theme;
+
   const styles = useMemo(() => createStyles(theme), [theme]);
 
   const [imageUrl, setImageUrl] = React.useState<string | null>(null);
@@ -35,41 +33,29 @@ const CardItem: React.FC<Props> = ({ style, data }) => {
     getImageUrl();
   }, [image_path]);
 
-  return (
-    <RNBounceable style={[styles.container, style]}>
-      <View style={styles.topContainer}>
-        <Icon
-          name={Math.random() > 0.5 ? "star" : "star-o"}
-          type={IconType.FontAwesome}
-          size={24}
-          color={colors.primary}
-        />
-      </View>
-
-      <View style={styles.contentContainer}>
-        <Text
-          color={Math.random() > 0.5 ? colors.secondary : colors.primary}
-          style={styles.word}
-        >
-          {word}
-        </Text>
-        <Text style={styles.sentence}>{examples.sentence}</Text>
-      </View>
-
+  const renderImage = () => {
+    return (
       <View style={styles.imageContainer}>
         {imageUrl && <Image style={styles.image} source={{ uri: imageUrl }} />}
       </View>
+    );
+  };
 
-      <View style={styles.bottomContainer}>
-        <Text style={styles.paragraph}>{examples.paragraph}</Text>
-      </View>
-
-      {/* {renderHeader()}
+  const renderContent = () => {
+    return (
       <View style={styles.contentContainer}>
-        {renderLanguage()}
-        {renderStar()}
-        {renderFork()}
-      </View> */}
+        <Text style={styles.word}>{word}</Text>
+        <Text style={styles.sentence}>&ldquo;{examples.sentence}&rdquo;</Text>
+      </View>
+    );
+  };
+
+  return (
+    <RNBounceable style={styles.container}>
+      {renderImage()}
+      {renderContent()}
+      <PronouncationButton />
+      <FavoriteButton />
     </RNBounceable>
   );
 };

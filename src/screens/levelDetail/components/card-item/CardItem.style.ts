@@ -1,74 +1,36 @@
 import { StyleSheet } from "react-native";
 import type { ExtendedTheme } from "@react-navigation/native";
+import fonts, { fontSize, lineHeight } from "@shared/theme/fonts";
 
 export default (theme: ExtendedTheme) => {
   const { colors } = theme;
   return StyleSheet.create({
-    container: {},
-    descriptionTextStyle: {
-      marginTop: 8,
+    container: {
+      height: "100%",
+      paddingHorizontal: 24,
+      paddingVertical: 16,
+      backgroundColor: colors.background,
     },
     imageContainer: {},
-    topContainer: {
-      position: "absolute",
-      top: 15,
-      right: 15,
-      flexDirection: "row",
-      alignItems: "center",
+    image: {
+      height: 218,
+      borderRadius: 24,
+      resizeMode: "cover",
     },
     contentContainer: {
-      flexDirection: "column",
-      alignItems: "center",
-      paddingHorizontal: 15,
-      paddingVertical: 15,
-    },
-    bottomContainer: {
-      padding: 15,
-      flexDirection: "column",
-      alignItems: "center",
+      marginVertical: 16,
     },
     word: {
-      color: "#cd1332",
-      lineHeight: 58,
-      fontWeight: "700",
+      fontFamily: fonts.montserrat.bold,
+      fontSize: fontSize.xxl,
+      lineHeight: lineHeight.xxl,
+      fontWeight: "600",
     },
     sentence: {
-      marginVertical: 5,
-      color: colors.calpyse,
-    },
-    paragraph: {
-      letterSpacing: 0.5,
+      fontSize: fontSize.m,
+      lineHeight: lineHeight.m,
       color: colors.text,
-    },
-    languageContainer: {
-      flexDirection: "row",
-      alignItems: "center",
-    },
-    languageColorStyle: {
-      width: 15,
-      height: 15,
-      borderWidth: 1,
-      borderRadius: 15,
-      borderColor: colors.borderColor,
-      backgroundColor: colors.calpyse,
-    },
-    starContainer: {
-      marginLeft: 16,
-      flexDirection: "row",
-      alignItems: "center",
-    },
-    valueTextStyle: {
-      marginLeft: 8,
-    },
-    forkContainer: {
-      marginLeft: 16,
-      flexDirection: "row",
-      alignItems: "center",
-    },
-    image: {
-      width: 400,
-      height: 450,
-      resizeMode: "cover",
+      marginTop: 12,
     },
   });
 };

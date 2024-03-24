@@ -1,14 +1,12 @@
 import type { ExtendedTheme } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
-import fonts from "@fonts";
+import fonts, { fontSize, lineHeight } from "@fonts";
 
 const styles = (theme: ExtendedTheme) => {
   const { colors } = theme;
   return StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: "center",
-      backgroundColor: colors.background,
       marginTop: 30,
       paddingHorizontal: 15,
     },
@@ -21,8 +19,8 @@ const styles = (theme: ExtendedTheme) => {
       paddingBottom: 30,
     },
     title: {
-      fontSize: 34,
-      lineHeight: 48,
+      fontSize: fontSize.xxxl,
+      lineHeight: lineHeight.xxxl,
       fontWeight: "600",
       fontFamily: fonts.montserrat.semiBold,
       color: colors.primary,
