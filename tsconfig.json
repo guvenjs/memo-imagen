@@ -28,6 +28,7 @@
     // ? Babel Plugin Module Resolver
     "baseUrl": "./src",
     "paths": {
+      "@src/*": ["./*"],
       "@shared/*": ["./shared/*"],
       "@shared-components/*": ["./shared/components/*"],
       "@shared-constants": ["./shared/constants"],
@@ -41,9 +42,10 @@
       "@services/*": ["./services/*"],
       "@screens/*": ["./screens/*"],
       "@utils": ["./utils/"],
-      "@assets": ["./assets/"],
-      "@images": ["./assets/images/"],
-      "@local-storage": ["./services/local-storage"],
+      "@assets/*": ["./assets/*"],
+      "@features/*": ["./features/*"],
+      "@firebase": ["./api/firebase"],
+      "@app/*": ["./app/*"],
     },
   },
   "extends": "@tsconfig/react-native/tsconfig.json",

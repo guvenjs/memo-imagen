@@ -6,6 +6,7 @@
       {
         "root": ["./src"],
         "alias": [
+          { "@src": "./src" },
           { "@shared": "./src/shared" },
           { "@shared-components": "./src/shared/components" },
           { "@shared-constants": "./src/shared/constants" },
@@ -21,7 +22,9 @@
           { "@utils": "./src/utils/" },
           { "@assets": "./src/assets/" },
           { "@event-emitter": "./src/services/event-emitter" },
-          { "@local-storage": "./src/services/local-storage" }
+          { "@features": "./src/features" },
+          { "@firebase": "./src/api/firebase" },
+          { "@app": "./src/app" }
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
