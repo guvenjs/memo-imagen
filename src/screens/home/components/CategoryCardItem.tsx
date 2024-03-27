@@ -20,12 +20,6 @@ const CategoryCardItem = ({ onPress, data, style }: Props) => {
   return (
     <RNBounceable onPress={onPress} style={[styles.container, style]}>
       <View style={styles.topContainer}>
-        <Icon
-          name={data.icon}
-          type={IconType.MaterialCommunityIcons}
-          size={fontSize.xxxl}
-          style={styles.icon}
-        />
         <Text h1 style={styles.title}>
           {data.title}
         </Text>

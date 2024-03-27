@@ -1,4 +1,5 @@
-import React, { useMemo } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useMemo, useState } from "react";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import createStyles from "./LevelDetailScreen.style";
@@ -11,6 +12,7 @@ import { ScreenWidth } from "@freakycoder/react-native-helpers";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import RootStackParamList from "navigation/types/RootStackParamList";
 import data from "data";
+import firestore from "@react-native-firebase/firestore";
 
 type Props = NativeStackScreenProps<RootStackParamList, "LevelDetail">;
 
@@ -18,7 +20,28 @@ const LevelDetailScreen = ({ route }: Props) => {
   const { id } = route.params;
 
   const category = data.categories.find((category) => category.id === id);
-  const words = category?.words || [];
+  // const words = category?.words || [];
+
+  const [words, setWords] = useState<Array<{ id: string }>>([]);
+
+  const fetchWords = async () => {
+    try {
+      const snapshot = await firestore()
+        .collection(`categories/${id}/words`)
+        .get();
+      const data = snapshot.docs.map((doc) => {
+        const { id } = doc;
+        return { id, ...doc.data() };
+      });
+      setWords(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchWords();
+  }, []);
 
   const theme = useTheme();
   const styles = useMemo(() => createStyles(theme), [theme]);

@@ -3,16 +3,14 @@ import { db } from "@src/api/firebase";
 
 import ICategoryCardItem from "@screens/home/components/types/ICategoryCardItem";
 
-export const fetchCategories = createAsyncThunk(
+export const fetchCategories = createAsyncThunk<ICategoryCardItem[]>(
   "categories/fetchCategories",
   async () => {
     const snapshot = await db.collection("categories").get();
-    const categories = snapshot.docs.map((doc) => ({
+    const categories: ICategoryCardItem[] = snapshot.docs.map((doc) => ({
       id: doc.id,
       title: doc.data().name,
-      icon: doc.data().name,
-      wordsCount: 100,
-      ...doc.data(),
+      wordsCount: doc.data().wordsCount,
     }));
 
     return categories;
