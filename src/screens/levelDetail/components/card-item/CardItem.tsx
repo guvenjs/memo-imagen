@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Image, View } from "react-native";
 import createStyles from "./CardItem.style";
 import RNBounceable from "@freakycoder/react-native-bounceable";
@@ -15,11 +15,10 @@ interface Props {
 
 const CardItem: React.FC<Props> = ({ data }) => {
   const theme = useTheme();
-  const { colors } = theme;
 
   const styles = useMemo(() => createStyles(theme), [theme]);
 
-  const [imageUrl, setImageUrl] = React.useState<string | null>(null);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   const { word, examples, image_path } = data;
 

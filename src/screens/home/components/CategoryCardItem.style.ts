@@ -5,42 +5,36 @@ export default (theme: ExtendedTheme) => {
   const { colors } = theme;
   return StyleSheet.create({
     container: {
-      flex: 1,
+      flexDirection: "row",
       backgroundColor: colors.secondaryDark,
-      justifyContent: "space-between",
-      alignItems: "center",
+      flexWrap: "wrap",
       borderRadius: 10,
-      paddingVertical: 30,
-      paddingHorizontal: 15,
+      paddingVertical: 10,
+      paddingHorizontal: 10,
     },
-    topContainer: {
+    image: {
+      flex: 0.6,
+      height: 125,
+      borderRadius: 10,
+    },
+    content: {
+      paddingTop: 5,
       flex: 1,
-      width: "100%",
-      alignItems: "center",
+      paddingLeft: 15,
+      justifyContent: "space-between",
     },
-    icon: {
-      color: colors.primary,
-      marginBottom: 10,
+    topContent: {},
+    bottomContent: {
+      alignSelf: "flex-end",
     },
-    title: {
-      lineHeight: 42,
-      fontWeight: "700",
-      color: colors.primary,
-      textAlign: "center",
-    },
-    bottomContainer: {
-      marginTop: 15,
+    title: {},
+    description: {
+      marginVertical: 10,
       flexDirection: "row",
       alignItems: "center",
     },
-    wordsCount: {
-      color: colors.primaryLight,
+    words: {
       fontWeight: "900",
-    },
-    bottomDescriptionText: {
-      color: colors.primaryLight,
-      fontWeight: "700",
-      paddingLeft: 5,
     },
   });
 };

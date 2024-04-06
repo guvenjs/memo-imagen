@@ -24,11 +24,13 @@ const HomeScreen: React.FC = () => {
       const snapshot = await firestore().collection("categories").get();
       const data: ICategoryCardItem[] = snapshot.docs.map((doc) => {
         const { id } = doc;
-        const { name, words } = doc.data();
+        const { name, description, image_path } = doc.data();
         return {
           id,
           title: name,
+          description: description,
           icon: name,
+          image_path: image_path,
           wordsCount: 100,
         };
       });

@@ -13,6 +13,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import RootStackParamList from "navigation/types/RootStackParamList";
 import data from "data";
 import firestore from "@react-native-firebase/firestore";
+import { Word } from "@src/services/models/words/Word";
 
 type Props = NativeStackScreenProps<RootStackParamList, "LevelDetail">;
 
@@ -22,16 +23,19 @@ const LevelDetailScreen = ({ route }: Props) => {
   const category = data.categories.find((category) => category.id === id);
   // const words = category?.words || [];
 
-  const [words, setWords] = useState<Array<{ id: string }>>([]);
+  const [words, setWords] = useState<Word[]>([]);
 
   const fetchWords = async () => {
     try {
       const snapshot = await firestore()
         .collection(`categories/${id}/words`)
         .get();
-      const data = snapshot.docs.map((doc) => {
+      const data: Word[] = snapshot.docs.map((doc) => {
         const { id } = doc;
-        return { id, ...doc.data() };
+        return {
+          id,
+          ...doc.data(),
+        } as Word;
       });
       setWords(data);
     } catch (error) {
