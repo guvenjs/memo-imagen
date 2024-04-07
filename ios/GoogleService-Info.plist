@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>480281802573-tcrjfo1f38b0r6e6h5uurqlsj5378fpb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.480281802573-tcrjfo1f38b0r6e6h5uurqlsj5378fpb</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>480281802573-33lkddibsdon2k74okntnv2649fo16rs.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBEEJOb3DNWW5hxwpVJyv2hmdwzDqzWzyk</string>
 	<key>GCM_SENDER_ID</key>
@@ -9,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.memo.imagen</string>
+	<string>com.memoimagen</string>
 	<key>PROJECT_ID</key>
 	<string>memo-imagen</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:480281802573:ios:b52db618d1782cd297e904</string>
+	<string>1:480281802573:ios:5b06176ffd4a3f8b97e904</string>
 	<key>DATABASE_URL</key>
 	<string>https://memo-imagen-default-rtdb.firebaseio.com</string>
 </dict>

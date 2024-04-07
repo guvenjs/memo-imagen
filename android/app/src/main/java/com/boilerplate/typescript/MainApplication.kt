@@ -1,4 +1,4 @@
-package com.memo.imagen
+package com.memoimagen
 
 import android.app.Application
 import com.facebook.react.PackageList

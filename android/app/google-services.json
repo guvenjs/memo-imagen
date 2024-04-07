@@ -8,12 +8,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:480281802573:android:df43e87a9b945a6197e904",
+        "mobilesdk_app_id": "1:480281802573:android:d94fd48e7e1c66d397e904",
         "android_client_info": {
-          "package_name": "com.memo.imagen"
+          "package_name": "com.memoimagen"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "480281802573-33lkddibsdon2k74okntnv2649fo16rs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.memoimagen",
+            "certificate_hash": "6c0175d57fde039d449aae766a90251d2e26d7da"
+          }
+        },
+        {
+          "client_id": "480281802573-dsqjv8lagun60goc30etf6r4qmi5g25f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCSAq52o702v1v23IWhgoVAQ4DF241Nunc"
@@ -21,7 +34,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480281802573-dsqjv8lagun60goc30etf6r4qmi5g25f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "480281802573-tcrjfo1f38b0r6e6h5uurqlsj5378fpb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.memoimagen"
+              }
+            }
+          ]
         }
       }
     }

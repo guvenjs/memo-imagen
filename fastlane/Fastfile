@@ -1,0 +1,54 @@
+platform :android do
+    lane :beta do
+     puts "Android Lanes"
+     build
+     end
+
+    desc "Build the Android application."
+     private_lane :build do
+       newBuildNumber = increment_version_code(gradle_file_path: "android/app/build.gradle")
+       gradle(task: "clean", project_dir: "android/")
+       gradle(task: "assemble", build_type: "release", project_dir: "android/")
+
+    firebase_app_distribution(
+          app: "1:480281802573:android:d94fd48e7e1c66d397e904",
+          groups: "stage",
+          release_notes: "RELEASE-NOTE",
+          firebase_cli_path: "/usr/local/bin/firebase",
+        )
+     commit_android_version_bump(message: "Android version bump to #{newBuildNumber}", gradle_file_folder:"android/app")
+     push_to_git_remote
+  end
+end
+platform :ios do
+  lane :beta do
+     puts "iOS Lanes"
+     build
+  end
+
+  private_lane :build do
+    newBuildNumber = increment_build_number(xcodeproj: './ios/memoImagen.xcodeproj')
+    gym(
+      scheme: "memoImagen",
+      silent: true,
+      clean: true,
+      workspace: './ios/memoImagen.xcworkspace',
+      export_method: "enterprise",
+      export_options: {
+        provisioningProfiles: { 
+          "com.memoImagen.beta" => "com.memoImagen.beta profile"
+        }
+      }
+   )
+    firebase_app_distribution(
+          app: "1:480281802573:android:d94fd48e7e1c66d397e904",
+          groups: "stage",
+          release_notes: "RELEASE-NOTE",
+          firebase_cli_path: "/usr/local/bin/firebase",
+        )
+    
+    commit_version_bump(message: "IOS version bump to #{newBuildNumber}", xcodeproj: "./ios/memoImagen.xcodeproj")
+    push_to_git_remote
+  end
+
+end
